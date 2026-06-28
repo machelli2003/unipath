@@ -1,12 +1,3 @@
-"""
-data/seed/courses_seed.json
-
-Sample seed data illustrating the required shape for the courses
-collection. Replace/expand with real, verified course data before
-production use — values here are illustrative placeholders, not verified
-admissions facts.
-"""
-
 [
   {
     "name": "Computer Science",

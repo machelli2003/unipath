@@ -49,3 +49,18 @@ class University(Document):
         "collection": "universities",
         "indexes": ["name", "short_name"],
     }
+
+
+def serialize_university(university) -> dict:
+    payload = university.to_mongo().to_dict() if hasattr(university, "to_mongo") else dict(university)
+    return {
+        "id": str(payload.get("_id") or payload.get("id") or ""),
+        "short_name": payload.get("short_name", ""),
+        "name": payload.get("name", ""),
+        "location": payload.get("location", ""),
+        "type": payload.get("type", ""),
+        "established": payload.get("established"),
+        "website": payload.get("website") or payload.get("website_url", ""),
+        "overview": payload.get("overview", ""),
+        "faculties": payload.get("faculties", []),
+    }

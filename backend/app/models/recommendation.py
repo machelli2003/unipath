@@ -22,6 +22,7 @@ from mongoengine import (
 
 from app.models.user import User
 from app.models.assessment import Assessment
+from bson import ObjectId
 
 
 class ScoreBreakdown(EmbeddedDocument):
@@ -60,4 +61,38 @@ class Recommendation(Document):
     meta = {
         "collection": "recommendations",
         "indexes": ["user", "assessment", "-created_at"],
+    }
+
+
+# Compatibility helpers for code that uses raw `db.recommendations` inserts
+def create_recommendation_doc(user_id: str, result: dict) -> dict:
+    """Return a plain dict suitable for inserting into the `recommendations` collection.
+    This is a compatibility shim for parts of the codebase that use raw PyMongo inserts
+    instead of the mongoengine `Recommendation` document above.
+    """
+    return {
+        "_id": ObjectId(),
+        "student_id": user_id,
+        "student_aggregate": result.get("student_aggregate"),
+        "shs_program": result.get("shs_program"),
+        "mode": result.get("mode"),
+        "top_courses": result.get("top_courses", []),
+        "ai_summary": result.get("ai_summary"),
+        "generated_at": datetime.utcnow(),
+    }
+
+
+def serialize_recommendation(r: dict) -> dict:
+    """Serialize a raw recommendation document (from PyMongo) to a JSON-friendly dict.
+    Works with documents created by `create_recommendation_doc` or legacy raw inserts.
+    """
+    return {
+        "id": str(r["_id"]),
+        "student_id": r.get("student_id"),
+        "student_aggregate": r.get("student_aggregate"),
+        "shs_program": r.get("shs_program"),
+        "mode": r.get("mode"),
+        "top_courses": r.get("top_courses", []),
+        "ai_summary": r.get("ai_summary"),
+        "generated_at": r.get("generated_at").isoformat() if r.get("generated_at") else None,
     }

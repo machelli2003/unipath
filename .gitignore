@@ -26,3 +26,6 @@ Thumbs.db
 .env
 *.pdf
 /tmp/reports/
+
+# Local Python virtualenv
+backend/venv311/

@@ -9,6 +9,9 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app.models.student_profile import StudentProfile
+from mongoengine.errors import ValidationError as MongoValidationError
+from app.utils.normalizers import normalize_profile_payload
+from mongoengine.errors import ValidationError as MongoValidationError
 
 profile_bp = Blueprint("profile", __name__)
 
@@ -28,6 +31,8 @@ def get_profile():
 def upsert_profile():
     user_id = get_jwt_identity()
     payload = request.get_json(silent=True) or {}
+    # Normalize common frontend variants into canonical model choices
+    payload = normalize_profile_payload(payload)
 
     profile = StudentProfile.objects(user=user_id).first()
     if not profile:
@@ -37,5 +42,13 @@ def upsert_profile():
         for key, value in payload.items():
             setattr(profile, key, value)
 
-    profile.save()
+    try:
+        profile.save()
+    except MongoValidationError as e:
+        # Return validation details to the client so frontend can show actionable errors
+        return jsonify({"error": "Validation error saving profile.", "details": str(e)}), 400
+    except Exception as e:
+        # Unexpected server error
+        return jsonify({"error": "Internal server error.", "details": str(e)}), 500
+
     return jsonify({"message": "Profile saved.", "profile_id": str(profile.id)}), 200

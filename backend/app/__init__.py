@@ -36,6 +36,16 @@ def create_app(config_name: str = "development") -> Flask:
     from app.routes.career_routes import career_bp
     from app.routes.chat_routes import chat_bp
 
+    from app.api.routes.recommend import recommend_bp as recommend_v2_bp
+    from app.api.routes.simulate import simulate_bp as simulate_v2_bp
+    from app.api.routes.compare import compare_bp as compare_v2_bp
+    from app.api.routes.chat import chat_bp as chat_v2_bp
+    from app.api.routes.universities import universities_bp as universities_v2_bp
+    from app.api.routes.courses import courses_bp as courses_v2_bp
+    from app.api.routes.careers import careers_bp as careers_v2_bp
+    from app.api.routes.assess import assess_bp as assess_v2_bp
+    from app.api.routes.report import report_bp as report_v2_bp
+
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(profile_bp, url_prefix="/api/profile")
     app.register_blueprint(assessment_bp, url_prefix="/api/assess")
@@ -47,6 +57,16 @@ def create_app(config_name: str = "development") -> Flask:
     app.register_blueprint(university_bp, url_prefix="/api/universities")
     app.register_blueprint(career_bp, url_prefix="/api/careers")
     app.register_blueprint(chat_bp, url_prefix="/api/chat")
+
+    app.register_blueprint(recommend_v2_bp, url_prefix="/api/v2/recommend", name="recommend_v2")
+    app.register_blueprint(simulate_v2_bp, url_prefix="/api/v2/simulate", name="simulate_v2")
+    app.register_blueprint(compare_v2_bp, url_prefix="/api/v2/compare", name="compare_v2")
+    app.register_blueprint(chat_v2_bp, url_prefix="/api/v2/chat", name="chat_v2")
+    app.register_blueprint(universities_v2_bp, url_prefix="/api/v2/universities", name="universities_v2")
+    app.register_blueprint(courses_v2_bp, url_prefix="/api/v2/courses", name="courses_v2")
+    app.register_blueprint(careers_v2_bp, url_prefix="/api/v2/careers", name="careers_v2")
+    app.register_blueprint(assess_v2_bp, url_prefix="/api/v2/assess", name="assess_v2")
+    app.register_blueprint(report_v2_bp, url_prefix="/api/v2/report", name="report_v2")
 
     # ----- Error handlers -----
     from app.utils.error_handlers import register_error_handlers

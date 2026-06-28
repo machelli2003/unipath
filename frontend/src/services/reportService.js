@@ -1,13 +1,10 @@
 import api from "./apiClient";
 
-export async function generateReport(recommendationId, reportType = "recommendation_summary") {
-  const { data } = await api.post("/report", {
-    recommendation_id: recommendationId,
-    report_type: reportType,
-  });
+export async function generateReport(reportType = "recommendation_summary") {
+  const { data } = await api.post("/api/v2/report/generate");
   return data;
 }
 
 export function getReportDownloadUrl(reportId) {
-  return `/api/report/${reportId}/download`;
+  return `/api/v2/report/${reportId}/download`;
 }

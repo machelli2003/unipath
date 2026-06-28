@@ -1,33 +1,78 @@
 """
 admission_engine/admission_classifier.py
 
-Final classification step of the Admission Intelligence System. Combines:
-  - gap vs latest cut-off (cutoff_comparator.py)
-  - historical trend (trend_analyzer.py)
-  - competition factor (competition_factor.py)
+Deterministic admission classification for UniPath.
 
-...into one of three deterministic categories:
-  🟢 Safe Choice
-  🟡 Competitive Choice
-  🔴 Reach Choice
+The simple rule set used by the platform is based on the gap between the
+student's aggregate and the cut-off aggregate (lower is better):
+  - safe: student aggregate <= cut-off - 3
+  - competitive: student aggregate <= cut-off + 2
+  - reach: student aggregate > cut-off + 2
 
-Thresholds are explicit constants below — fully auditable, no AI judgment
-call involved anywhere in this decision.
+The module also preserves the richer historical-cutoff workflow used by the
+admission engine when a list of historical cut-offs is supplied.
 """
+
+from __future__ import annotations
+
+from typing import Union
 
 from app.services.admission_engine.cutoff_comparator import compare_to_cutoff
 from app.services.admission_engine.trend_analyzer import analyze_trend
 from app.services.admission_engine.competition_factor import calculate_competition_factor
 
 # Gap thresholds, in WASSCE aggregate points (lower aggregate = stronger).
-SAFE_GAP_THRESHOLD = 3.0  # student beats cutoff by 3+ points -> Safe
-REACH_GAP_THRESHOLD = -2.0  # student misses cutoff by 2+ points -> Reach
+SAFE_THRESHOLD = -3
+COMPETITIVE_THRESHOLD = 2
+
+# Legacy threshold names retained for compatibility with the historical engine.
+SAFE_GAP_THRESHOLD = 3.0
+REACH_GAP_THRESHOLD = -2.0
 
 
 def classify_admission(
     student_aggregate: float,
-    historical_cutoffs: list[dict],
-) -> dict:
+    cut_off_aggregate_or_history: Union[int, float, list[dict]],
+) -> Union[str, dict]:
+    """
+    Supports both simple aggregate-gap classification and the richer engine
+    workflow based on a historical cut-off list.
+    """
+    if isinstance(cut_off_aggregate_or_history, (list, tuple)):
+        return classify_admission_with_history(student_aggregate, cut_off_aggregate_or_history)
+
+    gap = float(student_aggregate) - float(cut_off_aggregate_or_history)
+
+    if gap <= SAFE_THRESHOLD:
+        return "safe"
+    if gap <= COMPETITIVE_THRESHOLD:
+        return "competitive"
+    return "reach"
+
+
+def admission_probability(student_aggregate: int | float, cut_off_aggregate: int | float) -> int:
+    """
+    Returns an estimated admission probability (0-100%).
+    Based on the gap between the student's aggregate and the cut-off.
+    """
+    gap = float(student_aggregate) - float(cut_off_aggregate)
+
+    if gap <= -5:
+        return 95
+    if gap <= -3:
+        return 85
+    if gap <= -1:
+        return 70
+    if gap == 0:
+        return 55
+    if gap <= 2:
+        return 35
+    if gap <= 4:
+        return 15
+    return 5
+
+
+def classify_admission_with_history(student_aggregate: float, historical_cutoffs: list[dict]) -> dict:
     """
     historical_cutoffs: list of {year, cut_off_aggregate, applicants_count?,
                                   available_slots?}, at least 1 entry required.
@@ -48,7 +93,7 @@ def classify_admission(
 
     gap = comparison["gap"]
 
-    # Base classification from the raw gap
+    # Base classification from the raw gap.
     if gap >= SAFE_GAP_THRESHOLD:
         category = "Safe Choice"
     elif gap <= REACH_GAP_THRESHOLD:

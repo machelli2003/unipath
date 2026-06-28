@@ -39,3 +39,18 @@ class CutOffPoint(Document):
         # newest year first by default — convenient for "latest cut-off" queries
         "ordering": ["-year"],
     }
+
+
+def serialize_cut_off(cut_off_point) -> dict:
+    payload = cut_off_point.to_mongo().to_dict() if hasattr(cut_off_point, "to_mongo") else dict(cut_off_point)
+    return {
+        "id": str(payload.get("_id") or payload.get("id") or ""),
+        "university_id": payload.get("university_id", ""),
+        "university_short": payload.get("university_short", ""),
+        "course_id": payload.get("course_id", ""),
+        "course_name": payload.get("course_name", ""),
+        "year": payload.get("year", 0),
+        "aggregate": payload.get("aggregate", payload.get("cut_off_aggregate", 0)),
+        "competitiveness": payload.get("competitiveness", ""),
+        "category": payload.get("category", ""),
+    }

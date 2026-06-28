@@ -61,3 +61,7 @@ def calculate_aggregate(converted_subjects: list[dict], best_n: int = 6) -> floa
     values = sorted(s["numeric_value"] for s in converted_subjects)
     best = values[:best_n] if len(values) >= best_n else values
     return float(sum(best))
+
+
+def to_score(grade: str) -> int:
+    return grade_to_numeric(grade)

@@ -18,10 +18,9 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 from app.models.assessment import Assessment
 from app.models.student_profile import StudentProfile
 from app.models.course import Course
-from app.models.cut_off_point import CutOffPoint
 from app.models.recommendation import Recommendation
 from app.services.recommendation_engine.engine import generate_recommendations
-from app.services.admission_engine.admission_classifier import classify_admission
+from app.services.admission_engine.cut_off_analyzer import CutOffAnalyzer
 
 recommendation_bp = Blueprint("recommendation", __name__)
 
@@ -60,24 +59,9 @@ def get_recommendations():
     )
 
     # Attach admission category for each result, using ONLY DB cut-off data.
+    analyzer = CutOffAnalyzer()
     for result in top_results:
-        cutoffs = [
-            {
-                "year": c.year,
-                "cut_off_aggregate": c.cut_off_aggregate,
-                "applicants_count": c.applicants_count,
-                "available_slots": c.available_slots,
-            }
-            for c in CutOffPoint.objects(course_name=result["course_name"])
-        ]
-        # NOTE: in a real deployment you'd narrow this to a specific
-        # university the student is targeting; for a general top-10 view we
-        # use the most accessible (highest aggregate / least competitive)
-        # cut-off on record as an illustrative anchor, clearly labeled to
-        # the student in the UI as "based on the most accessible offering."
-        classification = (
-            classify_admission(assessment.aggregate_score, cutoffs) if cutoffs else None
-        )
+        classification = analyzer.analyze(result, assessment.aggregate_score)
         result["admission"] = classification
 
     recommendation = Recommendation(
