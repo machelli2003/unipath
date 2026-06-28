@@ -1,0 +1,8 @@
+[
+  { "university_name": "University of Ghana", "course_name": "Computer Science", "year": 2024, "cut_off_aggregate": 9, "applicants_count": 1200, "available_slots": 150, "source": "Illustrative placeholder — replace with verified GTEC/university data" },
+  { "university_name": "University of Ghana", "course_name": "Computer Science", "year": 2023, "cut_off_aggregate": 10, "applicants_count": 1100, "available_slots": 150, "source": "Illustrative placeholder — replace with verified GTEC/university data" },
+  { "university_name": "KNUST", "course_name": "Computer Science", "year": 2024, "cut_off_aggregate": 8, "applicants_count": 1500, "available_slots": 180, "source": "Illustrative placeholder — replace with verified GTEC/university data" },
+  { "university_name": "University of Ghana", "course_name": "Medicine and Surgery", "year": 2024, "cut_off_aggregate": 6, "applicants_count": 3000, "available_slots": 200, "source": "Illustrative placeholder — replace with verified GTEC/university data" },
+  { "university_name": "KNUST", "course_name": "Civil Engineering", "year": 2024, "cut_off_aggregate": 11, "applicants_count": 900, "available_slots": 200, "source": "Illustrative placeholder — replace with verified GTEC/university data" },
+  { "university_name": "University of Cape Coast", "course_name": "Business Administration", "year": 2024, "cut_off_aggregate": 14, "applicants_count": 800, "available_slots": 300, "source": "Illustrative placeholder — replace with verified GTEC/university data" }
+]

@@ -1,0 +1,89 @@
+"""
+data/seed/courses_seed.json
+
+Sample seed data illustrating the required shape for the courses
+collection. Replace/expand with real, verified course data before
+production use — values here are illustrative placeholders, not verified
+admissions facts.
+"""
+
+[
+  {
+    "name": "Computer Science",
+    "description": "Study of computation, algorithms, software systems, and the theory behind computing technology.",
+    "required_subjects": [
+      { "subject_name": "Mathematics", "minimum_grade": "B3", "is_core": "yes" },
+      { "subject_name": "English Language", "minimum_grade": "C6", "is_core": "yes" },
+      { "subject_name": "Integrated Science", "minimum_grade": "C6", "is_core": "yes" },
+      { "subject_name": "Elective ICT", "minimum_grade": "C6", "is_core": "no" }
+    ],
+    "required_skills": ["Analytical Thinking", "Problem Solving", "Mathematics"],
+    "related_interests": ["Tech & Computing"],
+    "related_career_goals": ["Software Engineer", "Data Scientist"],
+    "career_paths": ["Software Engineer", "Data Scientist", "Systems Analyst", "AI Engineer"],
+    "difficulty_level": "High",
+    "offered_at_universities": ["University of Ghana", "KNUST", "University of Cape Coast"]
+  },
+  {
+    "name": "Medicine and Surgery",
+    "description": "Professional training to diagnose, treat, and prevent illness in patients.",
+    "required_subjects": [
+      { "subject_name": "Mathematics", "minimum_grade": "B3", "is_core": "yes" },
+      { "subject_name": "English Language", "minimum_grade": "B3", "is_core": "yes" },
+      { "subject_name": "Biology", "minimum_grade": "B2", "is_core": "yes" },
+      { "subject_name": "Chemistry", "minimum_grade": "B2", "is_core": "yes" },
+      { "subject_name": "Physics", "minimum_grade": "B3", "is_core": "no" }
+    ],
+    "required_skills": ["Analytical Thinking", "Problem Solving", "Communication"],
+    "related_interests": ["Health Sciences"],
+    "related_career_goals": ["Doctor"],
+    "career_paths": ["Medical Doctor", "Surgeon", "Medical Researcher"],
+    "difficulty_level": "Very High",
+    "offered_at_universities": ["University of Ghana", "KNUST"]
+  },
+  {
+    "name": "Law",
+    "description": "Study of legal systems, statutes, and the practice of advocacy and legal reasoning.",
+    "required_subjects": [
+      { "subject_name": "English Language", "minimum_grade": "B3", "is_core": "yes" },
+      { "subject_name": "Mathematics", "minimum_grade": "C6", "is_core": "yes" },
+      { "subject_name": "Government", "minimum_grade": "B3", "is_core": "no" }
+    ],
+    "required_skills": ["Communication", "Analytical Thinking", "Leadership"],
+    "related_interests": ["Social Sciences"],
+    "related_career_goals": ["Lawyer"],
+    "career_paths": ["Lawyer", "Judge", "Legal Consultant", "Policy Analyst"],
+    "difficulty_level": "High",
+    "offered_at_universities": ["University of Ghana", "GIMPA"]
+  },
+  {
+    "name": "Business Administration",
+    "description": "Foundational study of management, finance, marketing, and organizational operations.",
+    "required_subjects": [
+      { "subject_name": "Mathematics", "minimum_grade": "C6", "is_core": "yes" },
+      { "subject_name": "English Language", "minimum_grade": "C6", "is_core": "yes" },
+      { "subject_name": "Economics", "minimum_grade": "C6", "is_core": "no" }
+    ],
+    "required_skills": ["Leadership", "Communication", "Analytical Thinking"],
+    "related_interests": ["Business", "Entrepreneurship"],
+    "related_career_goals": ["Accountant"],
+    "career_paths": ["Business Manager", "Entrepreneur", "Marketing Executive"],
+    "difficulty_level": "Moderate",
+    "offered_at_universities": ["University of Ghana", "KNUST", "UCC"]
+  },
+  {
+    "name": "Civil Engineering",
+    "description": "Design, construction, and maintenance of infrastructure such as roads, bridges, and buildings.",
+    "required_subjects": [
+      { "subject_name": "Mathematics", "minimum_grade": "B3", "is_core": "yes" },
+      { "subject_name": "Physics", "minimum_grade": "B3", "is_core": "yes" },
+      { "subject_name": "Chemistry", "minimum_grade": "C6", "is_core": "no" }
+    ],
+    "required_skills": ["Mathematics", "Problem Solving", "Analytical Thinking"],
+    "related_interests": ["Engineering"],
+    "related_career_goals": ["Engineer"],
+    "career_paths": ["Civil Engineer", "Structural Engineer", "Project Manager"],
+    "difficulty_level": "High",
+    "offered_at_universities": ["KNUST", "University of Mines and Technology"]
+  }
+]

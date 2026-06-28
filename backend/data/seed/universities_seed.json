@@ -1,0 +1,63 @@
+[
+  {
+    "name": "University of Ghana",
+    "short_name": "UG",
+    "location": "Legon, Accra",
+    "overview": "Ghana's premier university, offering a broad range of undergraduate and graduate programs.",
+    "faculties": [
+      {
+        "name": "College of Basic and Applied Sciences",
+        "departments": [
+          { "name": "Computer Science", "programs": ["Computer Science"] },
+          { "name": "Mathematics", "programs": ["Mathematics"] }
+        ]
+      },
+      {
+        "name": "College of Health Sciences",
+        "departments": [
+          { "name": "Medicine and Dentistry", "programs": ["Medicine and Surgery"] }
+        ]
+      }
+    ],
+    "general_admission_requirements": "Minimum aggregate per WASSCE rules; specific course cut-offs vary by year.",
+    "website_url": "https://www.ug.edu.gh"
+  },
+  {
+    "name": "KNUST",
+    "short_name": "KNUST",
+    "location": "Kumasi",
+    "overview": "Kwame Nkrumah University of Science and Technology, known for engineering, science, and technology programs.",
+    "faculties": [
+      {
+        "name": "College of Engineering",
+        "departments": [
+          { "name": "Civil Engineering", "programs": ["Civil Engineering"] }
+        ]
+      },
+      {
+        "name": "College of Science",
+        "departments": [
+          { "name": "Computer Science", "programs": ["Computer Science"] }
+        ]
+      }
+    ],
+    "general_admission_requirements": "Minimum aggregate per WASSCE rules; specific course cut-offs vary by year.",
+    "website_url": "https://www.knust.edu.gh"
+  },
+  {
+    "name": "University of Cape Coast",
+    "short_name": "UCC",
+    "location": "Cape Coast",
+    "overview": "Known for education, science, and business programs.",
+    "faculties": [
+      {
+        "name": "School of Business",
+        "departments": [
+          { "name": "Management Studies", "programs": ["Business Administration"] }
+        ]
+      }
+    ],
+    "general_admission_requirements": "Minimum aggregate per WASSCE rules; specific course cut-offs vary by year.",
+    "website_url": "https://www.ucc.edu.gh"
+  }
+]
