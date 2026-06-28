@@ -1,0 +1,62 @@
+Programme,CutOffPoints,CompetitionLevel,FacultyCategory,AwardType
+Bachelor of Laws (LLB),10,High,Law,Degree
+BSc Actuarial Science,12,High,Business,Degree
+BBA Accounting,14,Medium,Business,Degree
+BBA Banking and Finance,14,Medium,Business,Degree
+BSc Accounting,14,Medium,Business,Degree
+BSc Accounting and Finance,14,Medium,Business,Degree
+BSc Auditing,14,Medium,Business,Degree
+BSc Cyber Security,14,Medium,Technology,Degree
+BSc Data Science and Analytics,14,Medium,Business,Degree
+BSc Forensic Accounting,14,Medium,Business,Degree
+BSc Investment Banking,14,Medium,Business,Degree
+BSc Software Engineering,14,Medium,Technology,Degree
+BBA Human Resource Management,16,Medium,Business,Degree
+BBA Marketing,16,Medium,Business,Degree
+BSc Banking and Finance,16,Medium,Business,Degree
+BSc Business Economics,16,Medium,Business,Degree
+BSc Business Information Systems,16,Medium,Technology,Degree
+BSc Computing,16,Medium,Technology,Degree
+BSc Digital Marketing,16,Medium,Business,Degree
+BSc Economics,16,Medium,Arts,Degree
+BSc Information Technology,16,Medium,Technology,Degree
+BSc Project Management,16,Medium,Business,Degree
+BSc Taxation,16,Medium,Business,Degree
+BA Public Relations Management,18,Medium,Arts,Degree
+BBA Business Administration,18,Medium,Business,Degree
+BSc Entrepreneurship,18,Medium,Business,Degree
+BSc Health Services Management,18,Medium,Business,Degree
+BSc Human Resource Management,18,Medium,Business,Degree
+BSc Information Technology Management,18,Medium,Science,Degree
+BSc International Business,18,Medium,Business,Degree
+BSc Logistics and Transport Management,18,Medium,Business,Degree
+BSc Marketing,18,Medium,Business,Degree
+BSc Procurement Management,18,Medium,Business,Degree
+BSc Supply Chain Management,18,Medium,Business,Degree
+BA Communication Studies,20,Low,Arts,Degree
+BA Journalism,20,Low,Arts,Degree
+BBA Insurance,20,Low,Business,Degree
+BBA Sales Management,20,Low,Business,Degree
+BSc Hospitality Management,20,Low,Business,Degree
+BSc Insurance,20,Low,Business,Degree
+BSc Maritime Studies,20,Low,Business,Degree
+BSc Public Relations Management,20,Low,Business,Degree
+BSc Real Estate Management,20,Low,Business,Degree
+BSc Accounting (Evening),22,Low,Business,Degree
+BSc Banking and Finance (Evening),22,Low,Business,Degree
+BSc Business Administration (Evening),22,Low,Business,Degree
+BSc Office Management,22,Low,Business,Degree
+BSc Tourism Management,22,Low,Business,Degree
+BSc Accounting (Kumasi City Campus),24,Low,Business,Degree
+BSc Business Administration (Kumasi City Campus),24,Low,Business,Degree
+BSc Marketing (Evening),24,Low,Business,Degree
+Diploma in Accounting,28,Low,Business,Diploma
+Diploma in Business Administration,28,Low,Business,Diploma
+Diploma in Information Technology,28,Low,Technology,Diploma
+BSc Banking & Finance (Evening),30,Low,Business,Degree
+Diploma in Management,30,Low,Business,Diploma
+Diploma in Marketing,30,Low,Business,Diploma
+Diploma in Public Relations,30,Low,Business,Diploma
+BSc Accounting (Distance),32,Low,Business,Degree
+BSc Business Administration (Distance),32,Low,Business,Degree
+BSc Procurement & Logistics (Distance),34,Low,Business,Degree

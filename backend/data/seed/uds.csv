@@ -1,0 +1,84 @@
+Programme,CutOffPoints,CompetitionLevel,FacultyCategory,AwardType
+Bachelor of Medicine and Surgery,6,Very High,Health Sciences,Degree
+MBChB Medicine,8,Very High,Science,Degree
+Bachelor of Laws (LLB),10,High,Law,Degree
+BSc Pharmacy,10,High,Health Sciences,Degree
+BSc Physician Assistantship,10,High,Health Sciences,Degree
+Doctor of Medical Laboratory Science,12,High,Health Sciences,Degree
+BSc Accounting,14,Medium,Business,Degree
+BSc Civil Engineering,14,Medium,Science,Degree
+BSc Medical Imaging Technology,14,Medium,Health Sciences,Degree
+BSc Nurse Anaesthesia,14,Medium,Health Sciences,Degree
+BSc Nurse Practitioner,14,Medium,Health Sciences,Degree
+BSc Nursing,14,Medium,Health Sciences,Degree
+BSc Paediatric Nursing,14,Medium,Health Sciences,Degree
+BSc Banking and Finance,16,Medium,Business,Degree
+BSc Biotechnology,16,Medium,Sciences,Degree
+BSc Computer Science,16,Medium,Science,Degree
+BSc Midwifery,16,Medium,Health Sciences,Degree
+BSc Renewable Energy Engineering,16,Medium,Science,Degree
+BSc Actuarial Science,18,Medium,Science,Degree
+BSc Business Information Systems,18,Medium,Computing,Degree
+BSc Finance and Economics,18,Medium,Business,Degree
+BSc Forensic Science,18,Medium,Science,Degree
+BSc Human Resource Management,18,Medium,Business,Degree
+BSc Marketing,18,Medium,Business,Degree
+BSc Procurement and Supply Chain Management,18,Medium,Business,Degree
+BA Political Science,20,Low,Social Sciences,Degree
+BBA Business Administration,20,Low,Business,Degree
+BSc Agribusiness,20,Low,Agriculture,Degree
+BSc Agricultural Engineering,20,Low,Engineering,Degree
+BSc Agriculture Technology,20,Low,Agriculture,Degree
+BSc Community Nutrition,20,Low,Science,Degree
+BSc Engineering Physics,20,Low,Engineering,Degree
+BSc Health Information Management,20,Low,Health Sciences,Degree
+BSc Mathematics,20,Low,Science,Degree
+BSc Public Administration,20,Low,Business,Degree
+BSc Real Estate,20,Low,Built Environment,Degree
+BA Social Work,22,Low,Arts,Degree
+BEd Business Studies,22,Low,Education,Degree
+BEd Social Science,22,Low,Education,Degree
+BSc Agricultural Technology,22,Low,Science,Degree
+BSc Agriculture,22,Low,Agriculture,Degree
+BSc Animal Science,22,Low,Agriculture,Degree
+BSc Biological Sciences,22,Low,Science,Degree
+BSc Chemical Science and Technology,22,Low,Science,Degree
+BSc Computing Mathematics,22,Low,Science,Degree
+BSc Ecotourism and Hospitality Management,22,Low,Business,Degree
+BSc Food Science and Technology,22,Low,Agriculture,Degree
+BSc Information Technology,22,Low,Technology,Degree
+BSc Social Change Communication,22,Low,Arts,Degree
+BSc Statistics,22,Low,Science,Degree
+BA Arabic Studies,24,Low,Humanities,Degree
+BA Development Education,24,Low,Education,Degree
+BA Integrated Community Development,24,Low,Social Science,Degree
+BA Social Studies,24,Low,Social Science,Degree
+BEd Family and Consumer Science,24,Low,Education,Degree
+BSc Family and Consumer Science,24,Low,Science,Degree
+BSc Food Systems,24,Low,Agriculture,Degree
+BSc Forest Resource Conservation and Management,24,Low,Agriculture,Degree
+BEd Arabic,26,Low,Education,Degree
+BSc Community Health (Sandwich),28,Low,Health,Degree
+Diploma in Business Administration,28,Low,Business,Diploma
+Diploma in Early Childhood Care and Education,28,Low,Education,Diploma
+BA Integrated Development Studies (Sandwich),30,Low,Social Science,Degree
+BEd Basic Education (Sandwich),30,Low,Education,Degree
+BSc Agriculture (Sandwich),30,Low,Agriculture,Degree
+Diploma in Agribusiness,30,Low,Agriculture,Diploma
+Diploma in Agricultural Education,30,Low,Education,Diploma
+Diploma in Agriculture Science Education,30,Low,Education,Diploma
+Diploma in Agriculture Technology,30,Low,Agriculture,Diploma
+Diploma in Basic Education,30,Low,Education,Diploma
+Diploma in Development Education Studies,30,Low,Education,Diploma
+Diploma in Food Science and Technology,30,Low,Science,Diploma
+Diploma in ICT Education,30,Low,Education,Diploma
+Diploma in Natural Resources Management,30,Low,Science,Diploma
+Diploma in Nurse Anaesthesia,30,Low,Health Sciences,Diploma
+Diploma in Psychiatry Nursing,30,Low,Health Sciences,Diploma
+Diploma in Registered General Nursing (RGN),30,Low,Health Sciences,Diploma
+Diploma in Social Change Communication,30,Low,Arts,Diploma
+Diploma in Aquaculture and Fisheries Science,32,Low,Agriculture,Diploma
+Diploma in Biotechnology and Molecular Biology,32,Low,Science,Diploma
+Diploma in Family and Consumer Science,32,Low,Science,Diploma
+BSc Agribusiness (Distance),34,Low,Agriculture,Degree
+BA Integrated Community Development (Distance),36,Low,Arts,Degree

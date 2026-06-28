@@ -1,0 +1,116 @@
+Programme,Cut-Off,Demand,Category,Level
+MBChB Medicine,8,Very High,Health,Degree
+Doctor of Pharmacy,9,High,Health Sciences,Degree
+BSc Medical Laboratory Science,12,High,Health Sciences,Degree
+BSc Medical Laboratory Technology,12,High,Health Sciences,Degree
+BSc Midwifery,12,High,Health Sciences,Degree
+BSc Nursing,12,High,Health Sciences,Degree
+BSc Optometry,12,High,Science,Degree
+BSc Physician Assistant Studies,12,High,Health Sciences,Degree
+BSc Physician Assistantship,12,High,Science,Degree
+BSc Physiotherapy,12,High,Health Sciences,Degree
+Doctor of Optometry,12,High,Health Sciences,Degree
+LLB Law,12,High,Law,Degree
+BSc Diagnostic Imaging Technology,14,Medium,Health Sciences,Degree
+BSc Diagnostic Medical Sonography,14,Medium,Health Sciences,Degree
+BSc Dietetics,14,Medium,Health Sciences,Degree
+BSc Computer Science,15,Medium,Science,Degree
+BSc Information Technology,15,Medium,Technology,Degree
+BSc Nutrition,15,Medium,Health Sciences,Degree
+BA Economics,16,Medium,Social Science,Degree
+BBA Accounting,16,Medium,Business,Degree
+BComm Finance,16,Medium,Business,Degree
+BSc Actuarial Science,16,Medium,Science,Degree
+BSc Biochemistry,16,Medium,Science,Degree
+BSc Biomedical Sciences,16,Medium,Science,Degree
+BA Communication Studies,17,Medium,Arts,Degree
+BSc Economics with Finance,17,Medium,Business,Degree
+BSc Forensic Science,17,Medium,Science,Degree
+BSc Geography and Regional Planning,17,Medium,Social Science,Degree
+BSc Mathematics and Statistics,17,Medium,Science,Degree
+BSc Mathematics with Economics,17,Medium,Science,Degree
+BA Political Science,18,Medium,Arts,Degree
+BA Sociology,18,Medium,Arts,Degree
+BBA Commerce,18,Medium,Business,Degree
+BBA Human Resource Management,18,Medium,Business,Degree
+BBA Management,18,Medium,Business,Degree
+BSc Applied Economics,18,Medium,Social Science,Degree
+BSc Chemistry,18,Medium,Science,Degree
+BSc Community Health Nursing,18,Medium,Health Sciences,Degree
+BSc Engineering Physics,18,Medium,Science,Degree
+BSc Health Information Management,18,Medium,Health Sciences,Degree
+BSc Laboratory Technology,18,Medium,Science,Degree
+BSc Environmental Science,19,Low,Science,Degree
+BSc Meteorology and Atmospheric Physics,19,Low,Science,Degree
+BA Education,20,Low,Education,Degree
+BA English,20,Low,Arts,Degree
+BA Geography,20,Low,Arts,Degree
+BA Linguistics,20,Low,Arts,Degree
+BA Population and Health,20,Low,Social Science,Degree
+BA Social Sciences,20,Low,Social Science,Degree
+BComm Marketing,20,Low,Business,Degree
+BComm Procurement and Supply Chain Management,20,Low,Business,Degree
+BEd Computer Science,20,Low,Education,Degree
+BEd Mathematics,20,Low,Education,Degree
+BSc Agri-Business,20,Low,Agriculture,Degree
+BSc Development Economics,20,Low,Social Science,Degree
+BSc Fisheries and Aquatic Sciences,20,Low,Science,Degree
+BSc Horticulture,20,Low,Agriculture,Degree
+BSc Hospitality Management,20,Low,Business,Degree
+BSc Mathematics,20,Low,Science,Degree
+BSc Molecular Biology and Biotechnology,20,Low,Science,Degree
+BSc Psychology,20,Low,Social Science,Degree
+BSc Water and Sanitation,20,Low,Science,Degree
+BSc Industrial Chemistry,21,Low,Science,Degree
+BA Anthropology,22,Low,Arts,Degree
+BA Arts,22,Low,Arts,Degree
+BA French,22,Low,Arts,Degree
+BA Social Behaviour and Conflict Management,22,Low,Social Science,Degree
+BComm Management,22,Low,Business,Degree
+BEd Arts,22,Low,Education,Degree
+BEd Basic Education,22,Low,Education,Degree
+BEd Communication Design,22,Low,Education,Degree
+BEd Health Sciences Education,22,Low,Education,Degree
+BEd Home Economics,22,Low,Education,Degree
+BEd Information Technology Education,22,Low,Education,Degree
+BEd Science,22,Low,Education,Degree
+BSc Agricultural Extension and Community Development,22,Low,Agriculture,Degree
+BSc Agriculture,22,Low,Agriculture,Degree
+BSc Agro-Processing,22,Low,Agriculture,Degree
+BSc Mathematics with Business,22,Low,Science,Degree
+BSc Physics,22,Low,Science,Degree
+BSc Sport and Exercise Science,22,Low,Health Sciences,Degree
+BSc Tourism Management,22,Low,Business,Degree
+BA Theatre Studies,23,Low,Arts,Degree
+BA African Studies,24,Low,Arts,Degree
+BA Dance,24,Low,Arts,Degree
+BA History,24,Low,Arts,Degree
+BA Music,24,Low,Arts,Degree
+BA Religious Studies,24,Low,Arts,Degree
+BEd Construction Technology,24,Low,Education,Degree
+BEd Early Childhood Education,24,Low,Education,Degree
+BEd Fine Art,24,Low,Education,Degree
+BEd Health Physical Education and Recreation,24,Low,Education,Degree
+BEd Junior High School Education,24,Low,Education,Degree
+BEd Primary Education,24,Low,Education,Degree
+BSc Accounting (CoDE),24,Low,Business,Degree
+BA Chinese,25,Low,Arts,Degree
+BA Film Studies,25,Low,Arts,Degree
+BSc Conservation Biology and Entomology,25,Low,Science,Degree
+BSc Statistics,25,Low,Science,Degree
+BCom (CoDE),26,Low,Business,Degree
+BSc Management Studies (CoDE),26,Low,Business,Degree
+BEd Basic Education (CoDE),28,Low,Education,Degree
+BEd Early Childhood Education (CoDE),28,Low,Education,Degree
+BA Arts (CoDE),30,Low,Arts,Degree
+Diploma in Business Administration (CoDE),30,Low,Business,Diploma
+Diploma in Commerce (CoDE),30,Low,Business,Diploma
+Diploma in Early Childhood Education (CoDE),30,Low,Education,Diploma
+Diploma in Information Technology (CoDE),30,Low,Technology,Diploma
+Diploma in Junior High School Education (CoDE),30,Low,Education,Diploma
+Diploma in Labour Policy Studies (CoDE),30,Low,Business,Diploma
+BA Psychology (CoDE),32,Low,Arts,Degree
+BSc Information Technology (CoDE),32,Low,Computing,Degree
+Diploma in Basic Education (CoDE),32,Low,Education,Diploma
+Diploma in Education (CoDE),32,Low,Education,Diploma
+Diploma in Mathematics Education (CoDE),36,Low,Education,Diploma

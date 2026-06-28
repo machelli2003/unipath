@@ -1,0 +1,135 @@
+Programme,Cut-Off,Demand,Category,Level
+BSc Human Biology (Medicine),6,Very High,Health,Degree
+BSc Optometry,6,Very High,Science,Degree
+Doctor of Pharmacy,6,Very High,Health Sciences,Degree
+MBChB Medicine,6,Very High,Health,Degree
+BSc Biomedical Engineering,7,Very High,Engineering,Degree
+BSc Electrical Engineering,7,Very High,Engineering,Degree
+BSc Physician Assistantship,7,Very High,Health Sciences,Degree
+BSc Dental Surgery,8,Very High,Health Sciences,Degree
+LLB Law,8,Very High,Law,Degree
+BBA Accounting,9,High,Business,Degree
+BBA Banking and Finance,9,High,Business,Degree
+BBA Logistics and Supply Chain Management,9,High,Business,Degree
+BSc Aerospace Engineering,9,High,Engineering,Degree
+BSc Architecture,9,High,Built Environment,Degree
+BSc Computer Engineering,9,High,Engineering,Degree
+BSc Land Economy,9,High,Science,Degree
+BSc Nursing,9,High,Health Sciences,Degree
+BSc Petrochemical Engineering,9,High,Science,Degree
+BBA Human Resource Management,10,High,Business,Degree
+BSc Biochemistry,10,High,Science,Degree
+BSc Business Administration,10,High,Business,Degree
+BSc Chemical Engineering,10,High,Engineering,Degree
+BSc Civil Engineering,10,High,Engineering,Degree
+BSc Mechanical Engineering,10,High,Engineering,Degree
+BSc Medical Laboratory Sciences (Obuasi Campus),10,High,Health Sciences,Degree
+BSc Petroleum Engineering,10,High,Engineering,Degree
+DVM Veterinary Medicine,10,High,Health Sciences,Degree
+BA Political Studies,11,High,Arts,Degree
+BSc Actuarial Science,11,High,Science,Degree
+BSc Computer Science,11,High,Science,Degree
+BSc Development Planning,11,High,Built Environment,Degree
+BSc Electrical Engineering (Obuasi Campus),11,High,Engineering,Degree
+BSc Medical Imaging,11,High,Health Sciences,Degree
+BSc Nursing (Obuasi Campus),11,High,Health,Degree
+BSc Telecommunication Engineering,11,High,Engineering,Degree
+BSc Telecommunications Engineering,11,High,Science,Degree
+BBA Marketing,12,High,Business,Degree
+BSc Medical Laboratory Technology,12,High,Health Sciences,Degree
+BSc Midwifery (Obuasi Campus),12,High,Health Sciences,Degree
+BSc Planning,12,High,Built Environment,Degree
+BA Communication Studies,13,Medium,Arts,Degree
+BA Economics,13,Medium,Social Science,Degree
+BSc Hospitality and Tourism Management,13,Medium,Business,Degree
+BSc Real Estate,13,Medium,Business,Degree
+BA Communication Design,14,Medium,Arts,Degree
+BA Geography,14,Medium,Arts,Degree
+BA Sociology,14,Medium,Arts,Degree
+BA Sociology and Social Work,14,Medium,Social Science,Degree
+BBA Accounting (Obuasi Campus),14,Medium,Business,Degree
+BSc Automobile Engineering,14,Medium,Engineering,Degree
+BSc Civil Engineering (Obuasi Campus),14,Medium,Engineering,Degree
+BSc Construction Technology and Management,14,Medium,Built Environment,Degree
+BSc Food Science,14,Medium,Science,Degree
+BSc Food Science and Technology,14,Medium,Science,Degree
+BSc Geological Engineering,14,Medium,Engineering,Degree
+BSc Geomatic Engineering,14,Medium,Engineering,Degree
+BSc Information Technology,14,Medium,Technology,Degree
+BSc Mechanical Engineering (Obuasi Campus),14,Medium,Engineering,Degree
+BSc Physiotherapy and Sports Science,14,Medium,Health Sciences,Degree
+BSc Quantity Surveying,14,Medium,Built Environment,Degree
+BA French,15,Medium,Arts,Degree
+BA Social Work,15,Medium,Arts,Degree
+BFA Painting and Sculpture,15,Medium,Arts,Degree
+BSc Geological Engineering (Obuasi Campus),15,Medium,Engineering,Degree
+BSc Human Settlement Planning,15,Medium,Built Environment,Degree
+BSc Marine Engineering,15,Medium,Engineering,Degree
+BA Culture and Tourism,16,Medium,Arts,Degree
+BBA Business Administration,16,Medium,Business,Degree
+BBA Human Resource Management (Obuasi Campus),16,Medium,Business,Degree
+BBA Logistics and Supply Chain Management (Obuasi Campus),16,Medium,Business,Degree
+BSc Agricultural Engineering,16,Medium,Science,Degree
+BSc Chemistry,16,Medium,Science,Degree
+BSc Fashion Design,16,Medium,Arts,Degree
+BSc Herbal Medicine,16,Medium,Health Sciences,Degree
+BSc Industrial Engineering,16,Medium,Engineering,Degree
+BSc Materials Engineering,16,Medium,Engineering,Degree
+BSc Midwifery,16,Medium,Health Sciences,Degree
+BSc Statistics,16,Medium,Science,Degree
+BA Integrated Rural Art and Industry,17,Medium,Arts,Degree
+BBA Marketing (Obuasi Campus),17,Medium,Business,Degree
+BSc Disability and Rehabilitation Studies,17,Medium,Health Sciences,Degree
+BSc Environmental Science,17,Medium,Science,Degree
+BSc Geomatic Engineering (Obuasi Campus),17,Medium,Engineering,Degree
+BSc Landscape Design and Management,17,Medium,Agriculture,Degree
+BSc Textile Design and Technology,17,Medium,Arts,Degree
+BA History,18,Medium,Arts,Degree
+BSc Agribusiness Management,18,Medium,Business,Degree
+BSc Biological Sciences,18,Medium,Science,Degree
+BSc Environmental Sciences (Obuasi Campus),18,Medium,Science,Degree
+BSc Materials Engineering (Obuasi Campus),18,Medium,Engineering,Degree
+BSc Mathematics,18,Medium,Science,Degree
+BSc Metal Product Design Technology,18,Medium,Arts,Degree
+BSc Metallurgical Engineering,18,Medium,Engineering,Degree
+BSc Metallurgical Engineering (Obuasi Campus),19,Low,Engineering,Degree
+BA English,20,Low,Arts,Degree
+BSc Agricultural Biotechnology,20,Low,Science,Degree
+BSc Agriculture,20,Low,Agriculture,Degree
+BSc Meteorology and Climate Science,20,Low,Science,Degree
+BSc Natural Resources Management,20,Low,Agriculture,Degree
+BSc Metalsmithing and Jewellery Technology,21,Low,Arts,Degree
+BSc Physics,21,Low,Science,Degree
+BA Linguistics,22,Low,Arts,Degree
+BSc Accounting (IDL),22,Low,Business,Degree
+BSc Business Administration (IDL),22,Low,Business,Degree
+BSc Industrial Art,22,Low,Arts,Degree
+BSc Information Technology (IDL),22,Low,Technology,Degree
+BA Akan Language and Culture,24,Low,Arts,Degree
+BA Religious Studies,24,Low,Arts,Degree
+BBA Marketing (IDL),24,Low,Business,Degree
+BEd Junior High School,24,Low,Education,Degree
+BSc Aquaculture and Water Resources Management,24,Low,Agriculture,Degree
+BSc Ceramic Technology,24,Low,Arts,Degree
+BSc Forest Resources Technology,24,Low,Agriculture,Degree
+BSc Packaging Technology,24,Low,Technology,Degree
+BSc Painting and Sculpture,24,Low,Arts,Degree
+BSc Procurement and Supply Chain Management (IDL),24,Low,Business,Degree
+BSc Publishing Studies,24,Low,Arts,Degree
+BSc Sport and Exercise Science,24,Low,Science,Degree
+BA Sociology (IDL),28,Low,Social Science,Degree
+BSc Computer Science (Evening),28,Low,Computing,Degree
+BSc Accounting (Evening),30,Low,Business,Degree
+BSc Business Administration (Evening),30,Low,Business,Degree
+Diploma in Architectural Technology,30,Low,Engineering,Diploma
+Diploma in Business Administration,30,Low,Business,Diploma
+Diploma in Food Manufacturing,30,Low,Science,Diploma
+Diploma in French for Professions,30,Low,Arts,Diploma
+Diploma in Health Communication,30,Low,Health Sciences,Diploma
+Diploma in Health Information Management,30,Low,Health Sciences,Diploma
+Diploma in Information Technology,30,Low,Technology,Diploma
+Diploma in Medical Laboratory Science,30,Low,Health Sciences,Diploma
+BA Communication Studies (Evening),32,Low,Arts,Degree
+BSc Procurement & Supply Chain Management (Distance),32,Low,Business,Degree
+BA Sociology (Distance),34,Low,Arts,Degree
+Diploma in Education (Distance),36,Low,Education,Diploma
