@@ -72,7 +72,18 @@ class Explainer:
             labels = [INTEREST_LABELS.get(i, i) for i in list(matched_interests)[:2]]
             points.append(f"Matches your interest in {' and '.join(labels)}")
 
-        student_skills = profile.get("skills", {})
+        raw_skills = profile.get("skills", [])
+        if isinstance(raw_skills, dict):
+            student_skills = raw_skills
+        else:
+            student_skills = {}
+            for skill in raw_skills or []:
+                if isinstance(skill, dict):
+                    name = skill.get("skill_name") or skill.get("name")
+                    rating = skill.get("rating") or skill.get("value") or 0
+                    if name:
+                        student_skills[str(name).strip().lower()] = int(rating)
+
         required_skills = course.get("required_skills", [])
 
         SKILL_LABELS = {
@@ -85,11 +96,11 @@ class Explainer:
             "teamwork": "Teamwork",
         }
 
-        strong_skills = [
-            SKILL_LABELS.get(s, s)
-            for s in required_skills
-            if student_skills.get(s, 0) >= 4
-        ]
+        strong_skills = []
+        for skill in required_skills:
+            normalized_skill = str(skill).strip().lower().replace(" ", "_")
+            if student_skills.get(normalized_skill, 0) >= 4:
+                strong_skills.append(SKILL_LABELS.get(normalized_skill, str(skill)))
         if strong_skills:
             points.append(f"High {' and '.join(strong_skills[:2])} skill rating")
 

@@ -16,13 +16,20 @@ class CutOffAnalyzer:
         """
         try:
             db = get_db()
-        except ConnectionFailure:
+        except Exception:
             return None
 
-        record = db.cut_off_points.find_one(
-            {"course_id": course_id},
-            sort=[("year", -1)],
-        )
+        if db is None:
+            return None
+
+        try:
+            record = db.cut_off_points.find_one(
+                {"course_id": course_id},
+                sort=[("year", -1)],
+            )
+        except Exception:
+            return None
+
         return record
 
     def analyze(self, course: dict, student_aggregate: int) -> dict:

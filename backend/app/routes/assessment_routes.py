@@ -8,7 +8,7 @@ Assessment record. This is STEP 1 of the recommendation flow — scoring
 against courses happens later via /api/recommend.
 """
 
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, current_app
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app.models.assessment import Assessment
@@ -40,11 +40,23 @@ def submit_assessment():
         aggregate_score=aggregate,
         is_simulation=data.get("is_simulation", False),
     )
-    assessment.save()
+    try:
+        assessment.save()
+        assessment_id = str(assessment.id)
+    except Exception as e:
+        current_app.config["DB_AVAILABLE"] = False
+        current_app.config["DB_ERROR"] = str(e)
+        current_app.config.setdefault("fallback_assessments", {})[str(user_id)] = {
+            "mode": data["mode"],
+            "converted_subjects": converted,
+            "aggregate_score": aggregate,
+            "is_simulation": data.get("is_simulation", False),
+        }
+        assessment_id = f"fallback-{user_id}"
 
     return jsonify(
         {
-            "assessment_id": str(assessment.id),
+            "assessment_id": assessment_id,
             "converted_subjects": converted,
             "aggregate_score": aggregate,
         }

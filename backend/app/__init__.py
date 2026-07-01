@@ -27,7 +27,6 @@ def create_app(config_name: str = "development") -> Flask:
     from app.routes.auth_routes import auth_bp
     from app.routes.profile_routes import profile_bp
     from app.routes.assessment_routes import assessment_bp
-    from app.routes.recommendation_routes import recommendation_bp
     from app.routes.simulation_routes import simulation_bp
     from app.routes.comparison_routes import comparison_bp
     from app.routes.report_routes import report_bp
@@ -49,7 +48,7 @@ def create_app(config_name: str = "development") -> Flask:
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(profile_bp, url_prefix="/api/profile")
     app.register_blueprint(assessment_bp, url_prefix="/api/assess")
-    app.register_blueprint(recommendation_bp, url_prefix="/api/recommend")
+    app.register_blueprint(recommend_v2_bp, url_prefix="/api/recommend", name="recommend")
     app.register_blueprint(simulation_bp, url_prefix="/api/simulate")
     app.register_blueprint(comparison_bp, url_prefix="/api/compare")
     app.register_blueprint(report_bp, url_prefix="/api/report")

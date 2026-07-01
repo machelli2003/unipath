@@ -31,7 +31,7 @@ export function StudentProfileProvider({ children }) {
   const saveProfile = useCallback(async () => {
     setIsSaving(true);
     try {
-      const { data } = await api.put("/profile", profile);
+      const { data } = await api.put("/api/profile", profile);
       return data;
     } finally {
       setIsSaving(false);
@@ -39,7 +39,7 @@ export function StudentProfileProvider({ children }) {
   }, [profile]);
 
   const fetchProfile = useCallback(async () => {
-    const { data } = await api.get("/profile");
+    const { data } = await api.get("/api/profile");
     setProfile((prev) => ({ ...prev, ...data }));
     return data;
   }, []);

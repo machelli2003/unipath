@@ -1,7 +1,10 @@
 """
 Recommendation Engine — orchestrates the full pipeline.
 """
+import json
 from datetime import datetime
+from pathlib import Path
+
 from bson import ObjectId
 
 from ...db.mongodb import get_db
@@ -22,16 +25,40 @@ class RecommendationEngine:
         self.cut_off = CutOffAnalyzer()
         self.trend = TrendAnalyzer()
 
+    @staticmethod
+    def _load_seed_courses() -> list[dict]:
+        seed_path = Path(__file__).resolve().parents[3] / "data" / "seed" / "courses_seed.json"
+        if not seed_path.exists():
+            return []
+
+        with seed_path.open("r", encoding="utf-8") as handle:
+            courses = json.load(handle)
+
+        for index, course in enumerate(courses, start=1):
+            course.setdefault("_id", f"seed-course-{index}")
+            course.setdefault("university_short", "Sample University")
+            course.setdefault("category", "General")
+            course.setdefault("duration_years", 4)
+            course.setdefault("difficulty", "medium")
+            course.setdefault("career_paths", [])
+            course.setdefault("professional_body", "")
+            course.setdefault("cut_off_2025", 24)
+
+        return courses
+
     def run(self, profile: dict, save: bool = True) -> dict:
-        db = get_db()
+        try:
+            db = get_db()
+            courses = list(db.courses.find({})) if db else []
+        except Exception:
+            courses = []
+
+        if not courses:
+            courses = self._load_seed_courses()
 
         grades = profile.get("wassce_subjects", {})
         aggregate = GradeConverter.compute_aggregate(grades)
         shs_prog = profile.get("shs_program", "Science")
-
-        courses = list(db.courses.find({}))
-        if not courses:
-            return {"error": "No courses found in database. Run seed scripts first."}
 
         scored = []
         for course in courses:
@@ -58,7 +85,7 @@ class RecommendationEngine:
             c = item["course"]
             serialised.append(
                 {
-                    "course_id": str(c["_id"]),
+                    "course_id": str(c.get("_id") or c.get("id") or c.get("name", "").lower().replace(" ", "-")),
                     "course_name": c["name"],
                     "university": c.get("university_short", ""),
                     "category": c.get("category", ""),
@@ -90,15 +117,19 @@ class RecommendationEngine:
         if save:
             user_id = profile.get("user_id")
             if user_id:
-                doc = {
-                    "_id": ObjectId(),
-                    "student_id": user_id,
-                    "student_aggregate": aggregate,
-                    "top_courses": serialised,
-                    "generated_at": datetime.utcnow(),
-                    "ai_summary": None,
-                }
-                db.recommendations.insert_one(doc)
-                result["recommendation_id"] = str(doc["_id"])
+                try:
+                    doc = {
+                        "_id": ObjectId(),
+                        "student_id": user_id,
+                        "student_aggregate": aggregate,
+                        "top_courses": serialised,
+                        "generated_at": datetime.utcnow(),
+                        "ai_summary": None,
+                    }
+                    if db:
+                        db.recommendations.insert_one(doc)
+                        result["recommendation_id"] = str(doc["_id"])
+                except Exception:
+                    pass
 
         return result

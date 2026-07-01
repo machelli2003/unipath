@@ -11,6 +11,17 @@ export default function AssessmentPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
+  // Check which required fields are missing
+  const getMissingFields = () => {
+    const missing = [];
+    if (!profile.interests || profile.interests.length === 0) missing.push("Interests");
+    if (!profile.skills || profile.skills.length === 0) missing.push("Skills");
+    if (!profile.career_goals || profile.career_goals.length === 0) missing.push("Career Goals");
+    return missing;
+  };
+
+  const missingFields = getMissingFields();
+
   const handleRunAssessment = async () => {
     setError("");
     setIsSubmitting(true);
@@ -49,11 +60,26 @@ export default function AssessmentPage() {
         </ul>
       </div>
 
+      {missingFields.length > 0 && (
+        <div className="rounded-lg border border-yellow-200 bg-yellow-50 p-4">
+          <p className="text-sm font-semibold text-yellow-900">Complete your profile first</p>
+          <p className="mt-1 text-sm text-yellow-800">
+            You need to fill in: {missingFields.join(", ")}
+          </p>
+          <button
+            onClick={() => navigate("/onboarding")}
+            className="mt-2 text-sm font-medium text-yellow-700 underline hover:text-yellow-900"
+          >
+            Go back to onboarding →
+          </button>
+        </div>
+      )}
+
       {error && <p className="text-sm text-destructive">{error}</p>}
 
       <button
         onClick={handleRunAssessment}
-        disabled={isSubmitting || profile.subjects.length === 0}
+        disabled={isSubmitting || profile.subjects.length === 0 || missingFields.length > 0}
         className="w-full rounded-md bg-primary py-2.5 text-sm font-medium text-primary-foreground disabled:opacity-60"
       >
         {isSubmitting ? "Calculating..." : "Get my recommendations"}

@@ -1,8 +1,20 @@
+import { useEffect } from "react";
 import { useStudentProfile } from "@/context/StudentProfileContext";
 import { SKILLS } from "@/constants/studentOptions";
 
 export default function SkillsStep() {
   const { profile, updateProfile } = useStudentProfile();
+
+  // Auto-initialize all skills with default rating of 3 on first visit
+  useEffect(() => {
+    if (profile.skills.length === 0 && SKILLS.length > 0) {
+      const defaultSkills = SKILLS.map((skill) => ({
+        skill_name: skill,
+        rating: 3,
+      }));
+      updateProfile({ skills: defaultSkills });
+    }
+  }, []);
 
   const getRating = (skillName) => {
     const found = profile.skills.find((s) => s.skill_name === skillName);
@@ -24,7 +36,7 @@ export default function SkillsStep() {
     <div className="space-y-5">
       <div>
         <h2 className="text-lg font-semibold text-foreground">Rate your skills</h2>
-        <p className="text-sm text-muted-foreground">1 = weakest, 5 = strongest.</p>
+        <p className="text-sm text-muted-foreground">1 = weakest, 5 = strongest. Adjust the sliders below.</p>
       </div>
 
       <div className="space-y-4">

@@ -20,23 +20,24 @@ export function AuthProvider({ children }) {
         const decoded = jwtDecode(token);
         const isExpired = decoded.exp * 1000 < Date.now();
         if (!isExpired) {
-          // user details are re-fetched lazily by consuming components via
-          // /api/profile or stored user object — kept minimal here.
           const storedUser = localStorage.getItem("unipath_user");
           if (storedUser) setUser(JSON.parse(storedUser));
         } else {
           localStorage.removeItem(ACCESS_TOKEN_KEY);
           localStorage.removeItem(REFRESH_TOKEN_KEY);
+          localStorage.removeItem("unipath_user");
         }
       } catch {
         localStorage.removeItem(ACCESS_TOKEN_KEY);
+        localStorage.removeItem(REFRESH_TOKEN_KEY);
+        localStorage.removeItem("unipath_user");
       }
     }
     setIsLoading(false);
   }, []);
 
   const login = useCallback(async (email, password) => {
-    const { data } = await api.post("/auth/login", { email, password });
+    const { data } = await api.post("/api/auth/login", { email, password });
     localStorage.setItem(ACCESS_TOKEN_KEY, data.access_token);
     localStorage.setItem(REFRESH_TOKEN_KEY, data.refresh_token);
     localStorage.setItem("unipath_user", JSON.stringify(data.user));
@@ -45,7 +46,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   const register = useCallback(async (fullName, email, password) => {
-    const { data } = await api.post("/auth/register", {
+    const { data } = await api.post("/api/auth/register", {
       full_name: fullName,
       email,
       password,
@@ -63,6 +64,15 @@ export function AuthProvider({ children }) {
     localStorage.removeItem("unipath_user");
     setUser(null);
   }, []);
+
+  useEffect(() => {
+    const handleAuthExpired = () => {
+      logout();
+    };
+
+    window.addEventListener("auth:expired", handleAuthExpired);
+    return () => window.removeEventListener("auth:expired", handleAuthExpired);
+  }, [logout]);
 
   const value = {
     user,

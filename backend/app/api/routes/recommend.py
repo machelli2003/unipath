@@ -5,6 +5,7 @@ from bson import ObjectId
 from ...db.mongodb import get_db
 from ...services.recommendation.engine import RecommendationEngine
 from ...services.ai.explanation_generator import ExplanationGenerator
+from flask import current_app
 
 recommend_bp = Blueprint("recommend", __name__)
 engine = RecommendationEngine()
@@ -19,7 +20,29 @@ def run_recommendation():
 
     profile = db.student_profiles.find_one({"user_id": user_id})
     if not profile:
-        return jsonify({"error": "Profile not found. Complete onboarding first."}), 404
+        fallback_profiles = current_app.config.setdefault("fallback_profiles", {})
+        if user_id in fallback_profiles:
+            profile = dict(fallback_profiles[user_id])
+        else:
+            return jsonify({"error": "Profile not found. Complete onboarding first."}), 404
+
+    interests = profile.get("interests", [])
+    skills = profile.get("skills", [])
+    career_goals = profile.get("career_goals", [])
+
+    missing = []
+    if not interests:
+        missing.append("interests")
+    if not skills:
+        missing.append("skills")
+    if not career_goals:
+        missing.append("career goals")
+
+    if missing:
+        return jsonify({
+            "error": f"Complete your profile. Missing: {', '.join(missing)}.",
+            "missing_fields": missing
+        }), 400
 
     profile["user_id"] = user_id
     result = engine.run(profile, save=True)
